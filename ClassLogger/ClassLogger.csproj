@@ -201,6 +201,7 @@
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProfessorController.cs" />
     <Compile Include="Extensions\IdentityExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -240,6 +241,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\RegistrarCoordenadorViewModel.cs" />
     <Compile Include="ViewModels\RegistrarCursoViewModel.cs" />
+    <Compile Include="ViewModels\RegistrarProfessorViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -307,6 +309,7 @@
     <Content Include="Views\Curso\Registrar.cshtml" />
     <Content Include="Views\Coordenador\Atribuir.cshtml" />
     <Content Include="Views\Curso\Listar.cshtml" />
+    <Content Include="Views\Professor\Registrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

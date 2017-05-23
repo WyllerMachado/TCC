@@ -13,5 +13,15 @@ namespace ClassLogger.Models
         public virtual ApplicationUser User { get; set; }
 
         public virtual ICollection<Turma> Turmas { get; set; }
+
+        public Professor()
+        {
+            
+        }
+
+        public Professor(string userId)
+        {
+            UserId = userId;
+        }
     }
 }

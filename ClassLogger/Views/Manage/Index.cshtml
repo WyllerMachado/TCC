@@ -10,6 +10,26 @@
     <h4>Change your account settings</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>Imagem de Perfil</dt>
+        <dd>
+            <img src="@Url.Action("DisplayUserImage", "Manage")" style="width: 100px; height: 100px; border-radius: 10px; display: inline-block"/>
+        </dd>
+        <dt></dt>
+        <dd>
+            @using (Html.BeginForm("AlterarImagem", "Manage", FormMethod.Post, new {role = "form", enctype = "multipart/form-data"}))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    <input type="file" name="Foto" id="fileUpload" accept=".png,.jpg,.jpeg,.gif,.tif" />
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default" value="Alterar Imagem" />
+                </div>
+            }
+        </dd>
         <dt>Password:</dt>
         <dd>
             [

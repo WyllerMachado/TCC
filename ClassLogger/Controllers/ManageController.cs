@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using ClassLogger.Helpers;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -334,8 +335,29 @@ namespace ClassLogger.Controllers
             base.Dispose(disposing);
         }
 
-#region Helpers
-        // Used for XSRF protection when adding external logins
+        // POST: /Manage/AlterarImagem
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> AlterarImagem([Bind(Exclude = "Foto")] IndexViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (Request.Files.Count > 0)
+                {
+                    var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+
+                    var imageBinaryData = Photo.ToByteArray(Request.Files["Foto"]);
+                    user.Foto = imageBinaryData;
+
+                    await UserManager.UpdateAsync(user);
+                }
+            }
+
+            return RedirectToAction("Index", "Manage");
+        }
+
+        #region Helpers
+            // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
         public FileContentResult DisplayUserImage()
@@ -359,6 +381,8 @@ namespace ClassLogger.Controllers
 
             return new FileContentResult(imageData, "image/png");
         }
+
+
 
         private IAuthenticationManager AuthenticationManager
         {

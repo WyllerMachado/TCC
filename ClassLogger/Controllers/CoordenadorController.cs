@@ -97,7 +97,7 @@ namespace ClassLogger.Controllers
                     // var roleStore = new RoleStore<IdentityRole>(_context);
                     // var roleManager = new RoleManager<IdentityRole>(roleStore);
                     // await roleManager.CreateAsync(new IdentityRole { Name = "Coordenador" });
-                    ////////////////////////////////////////////////////////////////////////////
+                    //////////////////////////////////////////////////////////////////////////
 
                     // Adicionando usuário ao role "Coordenador"
                     var userStore = new UserStore<ApplicationUser>(_context);

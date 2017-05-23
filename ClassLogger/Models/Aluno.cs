@@ -25,5 +25,16 @@ namespace ClassLogger.Models
         public virtual ICollection<Turma> Turmas { get; set; }
         public virtual ICollection<RegistroDeAluno> RegistrosDeAluno { get; set; }
         public virtual ICollection<Boletim> Boletins { get; set; }
+
+        public Aluno()
+        {
+            
+        }
+
+        public Aluno(string userId, int cursoId)
+        {
+            UserId = userId;
+            CursoId = cursoId;
+        }
     }
 }

@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Controllers\CoordenadorController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -239,6 +240,7 @@
     <Compile Include="Models\Turma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\RegistrarAlunoViewModel.cs" />
     <Compile Include="ViewModels\RegistrarCoordenadorViewModel.cs" />
     <Compile Include="ViewModels\RegistrarCursoViewModel.cs" />
     <Compile Include="ViewModels\RegistrarProfessorViewModel.cs" />
@@ -310,6 +312,7 @@
     <Content Include="Views\Coordenador\Atribuir.cshtml" />
     <Content Include="Views\Curso\Listar.cshtml" />
     <Content Include="Views\Professor\Registrar.cshtml" />
+    <Content Include="Views\Aluno\Registrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
